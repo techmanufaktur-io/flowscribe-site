@@ -97,6 +97,8 @@
   .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 14px; }
   .fineprint { font-size: 13.5px; color: var(--ink-faint); margin-bottom: 64px; }
   .hero-bg { background: linear-gradient(180deg, #fff 0%, #f8f7fd 55%, #eeecfa 100%); padding-bottom: 130px; }
+  .hero-shot { max-width: 1060px; margin: 0 auto -70px; }
+  .hero-shot img { border-radius: var(--radius); box-shadow: var(--shadow-lg); border: 1px solid rgba(28,28,34,.14); }
 
   /* ---------- App-Mockup (reines CSS statt Screenshot) ---------- */
   .mock-window {
@@ -210,16 +212,45 @@
   .badge.ok { background: var(--green); }
   .todo-src { color: var(--ink-faint); font-size: 12px; flex-shrink: 0; max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
+
+  /* Roadmap */
+  .roadmap { max-width: 840px; margin: 0 auto; position: relative; padding-left: 36px; }
+  .roadmap::before {
+    content: ""; position: absolute; left: 9px; top: 8px; bottom: 8px; width: 3px;
+    background: linear-gradient(180deg, var(--green), var(--brand-bright) 45%, rgba(91,91,214,.15));
+    border-radius: 2px;
+  }
+  .milestone { position: relative; margin-bottom: 28px; }
+  .milestone::before {
+    content: ""; position: absolute; left: -34px; top: 8px; width: 15px; height: 15px;
+    border-radius: 50%; background: var(--brand-bright); border: 3px solid #fff;
+    box-shadow: 0 0 0 2px rgba(91,91,214,.3);
+  }
+  .milestone.now::before { background: var(--green); box-shadow: 0 0 0 2px rgba(46,182,125,.35), 0 0 14px rgba(46,182,125,.45); }
+  .milestone.later::before { background: #c9c9e8; box-shadow: 0 0 0 2px rgba(91,91,214,.12); }
+  .milestone .card { padding: 22px 26px; }
+  .ms-head { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; flex-wrap: wrap; }
+  .ms-head h3 { font-size: 20px; font-weight: 800; letter-spacing: -.02em; }
+  .pill { font-size: 11px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; border-radius: 100px; padding: 4px 11px; }
+  .pill.now { background: rgba(46,182,125,.14); color: #1d8a5c; }
+  .pill.next { background: rgba(91,91,214,.12); color: var(--brand-bright); }
+  .pill.later { background: rgba(28,28,34,.07); color: var(--ink-faint); }
+  .ms-items { display: flex; flex-wrap: wrap; gap: 8px; }
+  .ms-items span {
+    font-size: 13.5px; font-weight: 600; color: var(--ink-soft);
+    background: var(--paper-warm); border: 1px solid rgba(28,28,34,.09);
+    border-radius: 100px; padding: 6px 13px;
+  }
+  .milestone.now .ms-items span { background: rgba(46,182,125,.08); border-color: rgba(46,182,125,.2); }
+
   /* Team */
   .team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; max-width: 820px; margin: 0 auto 36px; }
   @media (max-width: 720px) { .team-grid { grid-template-columns: 1fr; } }
   .person { text-align: center; padding: 34px 28px; }
-  .avatar {
-    width: 84px; height: 84px; border-radius: 50%; margin: 0 auto 16px;
-    display: grid; place-items: center; font-size: 30px; font-weight: 800; color: #fff;
+  .avatar-photo {
+    width: 96px; height: 96px; border-radius: 50%; margin: 0 auto 16px;
+    object-fit: cover; border: 3px solid #fff; box-shadow: 0 6px 20px rgba(28,28,34,.18);
   }
-  .a-daniel { background: linear-gradient(135deg, #5b5bd6, #8b8bf4); }
-  .a-clemens { background: linear-gradient(135deg, #0e9888, #2eb67d); }
   .person h3 { font-size: 20px; margin-bottom: 3px; }
   .person .role { color: var(--brand-bright); font-weight: 700; font-size: 14px; margin-bottom: 10px; }
   .person p { font-size: 15px; color: var(--ink-soft); }
@@ -260,6 +291,7 @@
     <div class="nav-links">
       <a href="#features" data-i18n="nav.features">Features</a>
       <a href="#erwartungen" data-i18n="nav.expectations">Erwartungen</a>
+      <a href="#roadmap" data-i18n="nav.roadmap">Roadmap</a>
       <a href="#team">Team</a>
       <a href="#faq">FAQ</a>
       <select class="lang-picker" id="lang" aria-label="Sprache">
@@ -282,66 +314,9 @@
   </div>
   <p class="fineprint" data-i18n="hero.fine">macOS 15+ · Apple Silicon · Transkription on-device · Kein Account, kein Cloud-Zwang</p>
 
-  <!-- Live-Session-Mockup -->
-  <div class="mock-window" aria-hidden="true">
-    <div class="mock-titlebar">
-      <span class="tl r"></span><span class="tl y"></span><span class="tl g"></span>
-      <span class="mock-title">Kundentermin Enercept — FlowScribe</span>
-      <span class="rec-dot"></span><span class="rec-label" data-i18n="mock.rec">Aufnahme · 23:41</span>
-    </div>
-    <div class="mock-strips">
-      <div class="agenda-bar">
-        <div class="agenda-seg" style="flex: 42; background: #5b5bd6;">42 % Status Alpha</div>
-        <div class="agenda-seg" style="flex: 24; background: #3dd68c; color: #0b3524;">24 % Budget</div>
-        <div class="agenda-seg" style="flex: 21; background: #3cc9e8; color: #082b33;">21 % Nächste Schritte</div>
-        <div class="agenda-seg" style="flex: 13; background: #3a3d4d;">13 %</div>
-      </div>
-      <div class="exp-row">
-        <span class="exp-chip"><span class="dot green"></span><span data-i18n="mock.exp1">Konkrete nächste Schritte</span></span>
-        <span class="exp-chip"><span class="dot amber"></span><span data-i18n="mock.exp2">Startdatum genannt</span></span>
-        <span class="exp-chip"><span class="dot red"></span><span data-i18n="mock.exp3">Keine Technikdetails!</span></span>
-      </div>
-    </div>
-    <div class="mock-body">
-      <div class="mock-transcript">
-        <div class="tr-line"><span class="tr-time">21:58</span><div><span class="tr-speaker other">Thomas</span><div class="tr-text">Der Vorstand hat die 180.000 Euro für Phase zwei freigegeben.</div></div></div>
-        <div class="tr-line"><span class="tr-time">22:14</span><div><span class="tr-speaker other">Thomas</span><div class="tr-text">Aber wir verschieben das Startdatum auf Kalenderwoche 38.</div></div></div>
-        <div class="tr-line"><span class="tr-time">22:31</span><div><span class="tr-speaker me">Ich</span><div class="tr-text">Ich schicke euch bis Freitag das aktualisierte Angebot.</div></div></div>
-        <div class="tr-note">✎ !todo Frau Weber in CC nehmen</div>
-        <div class="tr-line"><span class="tr-time">23:02</span><div><span class="tr-speaker other">Thomas</span><div class="tr-text">Die Schulungen machen wir komplett remote, in drei Blöcken.</div></div></div>
-      </div>
-      <div class="mock-board">
-        <div>
-          <div class="mock-col-title"><span class="col-dot" style="background:#8b8bf4"></span>To-dos</div>
-          <div class="mock-card c-indigo">Angebot Phase 2 bis Freitag senden
-            <div class="fields"><span class="field">Owner: Ich</span><span class="field">Fällig: Fr</span></div>
-            <div class="meta"><span>⏱ 22:31</span><span>🎯 A3</span><span>92 %</span></div>
-          </div>
-          <div class="mock-card c-indigo">Key-User-Liste bis 31.07.
-            <div class="fields"><span class="field">Owner: Weber</span></div>
-            <div class="meta"><span>⏱ 19:12</span><span>88 %</span></div>
-          </div>
-        </div>
-        <div>
-          <div class="mock-col-title"><span class="col-dot" style="background:#3dd68c"></span>Entscheidungen</div>
-          <div class="mock-card c-green">Budget 180 T€ freigegeben
-            <div class="meta"><span>⏱ 21:58</span><span>🎯 A2</span><span>95 %</span></div>
-          </div>
-          <div class="mock-card c-green">Schulungen remote, 3 Blöcke
-            <div class="meta"><span>⏱ 23:02</span><span>90 %</span></div>
-          </div>
-        </div>
-        <div>
-          <div class="mock-col-title"><span class="col-dot" style="background:#ff6369"></span>Risiken</div>
-          <div class="mock-card c-red">Dienstleister-Schnittstelle 2 Wochen im Verzug
-            <div class="meta"><span>⏱ 08:44</span><span>🎯 A1</span><span>87 %</span></div>
-          </div>
-          <div class="mock-card c-amber" style="border-left-color:#ffc53d">Start verschoben auf KW 38
-            <div class="meta"><span>⏱ 22:14</span><span>91 %</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <!-- Echter App-Screenshot (aus der App gerendert) -->
+  <div class="hero-shot">
+    <img src="assets/hero-session.png" alt="FlowScribe Live-Session: Transkript links, Board mit To-dos, Entscheidungen und Risiken rechts, Agenda-Anteile und Erwartungs-Ampeln oben" loading="eager">
   </div>
 </header>
 </div>
@@ -395,10 +370,8 @@
 
 <section>
   <div class="wrap split flip">
-    <div class="todo-mock" aria-hidden="true">
-      <div class="todo-row"><span class="todo-check"></span><div class="todo-main">Angebot Phase 2 senden<div class="who">Ich · bis Freitag</div></div><span class="badge">überfällig</span><span class="todo-src">Enercept 12.07.</span></div>
-      <div class="todo-row"><span class="todo-check"></span><div class="todo-main">Key-User-Liste liefern<div class="who">Frau Weber · bis 31.07.</div></div><span class="badge ok">offen</span><span class="todo-src">Enercept 19.07.</span></div>
-      <div class="todo-row"><span class="todo-check"></span><div class="todo-main">Eskalationstelefonat Dienstleister<div class="who">Thomas · Montag</div></div><span class="badge ok">offen</span><span class="todo-src">Jour Fixe 21.07.</span></div>
+    <div>
+      <img src="assets/commitments.png" alt="FlowScribe Zusagen-Register: offene To-dos mit Owner, Frist und Quell-Session" style="border-radius: var(--radius); box-shadow: var(--shadow-lg); border: 1px solid rgba(28,28,34,.14);">
     </div>
     <div>
       <h2 data-i18n="mem.h2">Ein Gedächtnis für Verbindlichkeit.</h2>
@@ -435,14 +408,14 @@
     </div>
     <div class="team-grid">
       <div class="card person">
-        <div class="avatar a-daniel">DP</div>
+        <img class="avatar-photo" src="assets/daniel.jpg" alt="Daniel Pudelko">
         <h3>Daniel Pudelko</h3>
         <div class="role" data-i18n="team.d.role">Founder · Product &amp; Ideas</div>
         <p data-i18n="team.d.p">Treibt die Produktideen hinter FlowScribe — von der Erwartungs-These bis zum Live-Board. Sitzt selbst in 6–8 Terminen am Tag.</p>
         <a href="mailto:hello@techmanufaktur.de">hello@techmanufaktur.de</a>
       </div>
       <div class="card person">
-        <div class="avatar a-clemens">C</div>
+        <img class="avatar-photo" src="assets/clemens.jpg" alt="Clemens">
         <h3>Clemens</h3>
         <div class="role" data-i18n="team.c.role">Founder · Implementation &amp; Engineering</div>
         <p data-i18n="team.c.p">Macht aus den Ideen Code — von der Audio-Engine über die Extraktions-Pipeline bis zur nativen macOS-App.</p>
@@ -453,6 +426,54 @@
       <span data-i18n="team.quote">„Ein Tool, das deine Meetings mithört, verdient kein blindes Vertrauen. Du sollst genau wissen, wer es baut — und uns direkt schreiben können."</span>
       <cite>— Daniel</cite>
     </blockquote>
+  </div>
+</section>
+
+
+<section id="roadmap">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 data-i18n="road.h2">Wohin die Reise geht.</h2>
+      <p data-i18n="road.sub">FlowScribe wächst vom Meeting-Genie zum persönlichen Arbeitsbereich — hier ist der Plan.</p>
+    </div>
+    <div class="roadmap">
+      <div class="milestone now">
+        <div class="card">
+          <div class="ms-head"><h3 data-i18n="road.1.h">Jetzt — im Early Access</h3><span class="pill now" data-i18n="road.1.pill">Verfügbar</span></div>
+          <div class="ms-items">
+            <span data-i18n="road.1.i1">⚡️ Live-Board + Erwartungen</span>
+            <span data-i18n="road.1.i2">🎧 Systemton für Teams &amp; Zoom</span>
+            <span data-i18n="road.1.i3">✅ Zusagen-Tracker</span>
+            <span data-i18n="road.1.i4">📄 Docs, Sheets &amp; Whiteboards</span>
+            <span data-i18n="road.1.i5">🔎 „Frag deine Bibliothek"</span>
+            <span data-i18n="road.1.i6">🤖 Auto-Pilot &amp; Wochen-Digest</span>
+          </div>
+        </div>
+      </div>
+      <div class="milestone">
+        <div class="card">
+          <div class="ms-head"><h3 data-i18n="road.2.h">Als Nächstes — Herbst 2026</h3><span class="pill next" data-i18n="road.2.pill">In Arbeit</span></div>
+          <div class="ms-items">
+            <span data-i18n="road.2.i1">☁️ iCloud-Sync</span>
+            <span data-i18n="road.2.i2">✍️ iPad-App mit Pencil aufs Whiteboard</span>
+            <span data-i18n="road.2.i3">🧠 Pre-Meeting-Briefing — vorbereitet in den Termin</span>
+            <span data-i18n="road.2.i4">🗣 Automatische Sprechernamen</span>
+            <span data-i18n="road.2.i5">👥 Team-Templates</span>
+          </div>
+        </div>
+      </div>
+      <div class="milestone later">
+        <div class="card">
+          <div class="ms-head"><h3 data-i18n="road.3.h">Danach — 2027</h3><span class="pill later" data-i18n="road.3.pill">Vision</span></div>
+          <div class="ms-items">
+            <span data-i18n="road.3.i1">📱 iPhone: lesen, abhaken, unterwegs aufnehmen</span>
+            <span data-i18n="road.3.i2">🔗 Team-Sharing mit Read-Links</span>
+            <span data-i18n="road.3.i3">🧩 Integrationen: Slack, CRM &amp; Kalender-Suiten</span>
+            <span data-i18n="road.3.i4">📊 Meeting-Analytics Pro</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -509,6 +530,27 @@ const i18n = {
     "nav.features": "Features",
     "nav.expectations": "Expectations",
     "nav.cta": "Early access",
+    "nav.roadmap": "Roadmap",
+    "road.h2": "Where this is going.",
+    "road.sub": "FlowScribe grows from meeting genius to personal workspace — here's the plan.",
+    "road.1.h": "Now — in early access", "road.1.pill": "Available",
+    "road.1.i1": "⚡️ Live board + expectations",
+    "road.1.i2": "🎧 System audio for Teams & Zoom",
+    "road.1.i3": "✅ Commitment tracker",
+    "road.1.i4": "📄 Docs, sheets & whiteboards",
+    "road.1.i5": "🔎 \"Ask your library\"",
+    "road.1.i6": "🤖 Auto-pilot & weekly digest",
+    "road.2.h": "Next — fall 2026", "road.2.pill": "In progress",
+    "road.2.i1": "☁️ iCloud sync",
+    "road.2.i2": "✍️ iPad app with Pencil on the whiteboard",
+    "road.2.i3": "🧠 Pre-meeting briefing — walk in prepared",
+    "road.2.i4": "🗣 Automatic speaker names",
+    "road.2.i5": "👥 Team templates",
+    "road.3.h": "Later — 2027", "road.3.pill": "Vision",
+    "road.3.i1": "📱 iPhone: read, check off, record on the go",
+    "road.3.i2": "🔗 Team sharing with read links",
+    "road.3.i3": "🧩 Integrations: Slack, CRM & calendar suites",
+    "road.3.i4": "📊 Meeting analytics pro",
     "hero.eyebrow": "On-device transcription + AI board",
     "hero.h1": "The result is done<br>when the <span class=\"accent\">meeting ends</span>.",
     "hero.sub": "Define what you want to know before the meeting — FlowScribe fills your board live while you talk. To-dos, decisions, risks. Every card backed by the transcript.",
