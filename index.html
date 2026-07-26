@@ -369,6 +369,23 @@
   </div>
 </section>
 
+<section class="warm" id="phasen">
+  <div class="wrap split flip">
+    <div>
+      <img src="assets/gantt.png" alt="FlowScribe Zeitleiste: Projektphasen Spezifikation, Umsetzung und Abnahme als Gantt-Balken, Dokumente mit Status-Symbolen den Phasen zugeordnet, Heute-Linie" style="border-radius: var(--radius); box-shadow: var(--shadow-lg); border: 1px solid rgba(28,28,34,.14);">
+    </div>
+    <div>
+      <h2 data-i18n="phase.h2">Aus der Akte wird ein Plan.</h2>
+      <p class="lead" data-i18n="phase.lead">Definiere Phasen wie Spezifikation, Umsetzung, Abnahme — und die Akte wird zur Zeitleiste: Jedes Dokument hängt an seiner Phase, jeder Stand hat einen Status.</p>
+      <ul class="checklist">
+        <li><span class="tick">✓</span><span data-i18n-html="phase.li1"><strong>Zeitleiste statt Bauchgefühl</strong> — Phasen als Balken mit Zeitraum, Heute-Linie inklusive. Ein Blick zeigt, wo das Projekt steht.</span></li>
+        <li><span class="tick">✓</span><span data-i18n-html="phase.li2"><strong>✦ KI ordnet zu</strong> — ein Klick, und die KI hängt unzugeordnete Dokumente an die passende Phase. Mehrere Dokumente pro Phase, versteht sich.</span></li>
+        <li><span class="tick">✓</span><span data-i18n-html="phase.li3"><strong>Status pro Dokument</strong> — Offen, In Arbeit, Freigegeben. „Diesen Stand hat der Kunde abgenommen" ist ab jetzt ein Chip, kein Suchauftrag.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 <section class="warm" id="einsatz">
   <div class="wrap">
     <div class="section-head">
@@ -406,13 +423,13 @@
 <section>
   <div class="wrap split flip">
     <div>
-      <img src="assets/commitments.png" alt="FlowScribe Zusagen-Register: offene To-dos mit Owner, Frist und Quell-Session" style="border-radius: var(--radius); box-shadow: var(--shadow-lg); border: 1px solid rgba(28,28,34,.14);">
+      <img src="assets/commitments.png" alt="FlowScribe Zusagen: alle offenen To-dos zentral, nach Akten gruppiert, mit Owner, Frist und Überfällig-Markierung" style="border-radius: var(--radius); box-shadow: var(--shadow-lg); border: 1px solid rgba(28,28,34,.14);">
     </div>
     <div>
-      <h2 data-i18n="mem.h2">Ein Gedächtnis für Verbindlichkeit.</h2>
-      <p class="lead" data-i18n="mem.lead">Zusagen verschwinden nicht mehr in alten Protokollen. FlowScribe führt sie über alle Termine hinweg — und bringt sie zurück, wenn es zählt.</p>
+      <h2 data-i18n="mem.h2">Alle To-dos. Eine Stelle. Null Durchklicken.</h2>
+      <p class="lead" data-i18n="mem.lead">To-dos nachhalten ist das A und O — und genau daran scheitern Protokolle. FlowScribe sammelt jede Zusage aus jedem Termin an einer zentralen Stelle: pro Akte gruppiert, überfällig markiert, direkt abhakbar.</p>
       <ul class="checklist">
-        <li><span class="tick">✓</span><span data-i18n-html="mem.li1"><strong>Zusagen-Tracker</strong> — wer schuldet wem was, mit Überfällig-Erkennung („bis Freitag", „KW 38").</span></li>
+        <li><span class="tick">✓</span><span data-i18n-html="mem.li1"><strong>Eine übergeordnete Sicht</strong> — alle offenen To-dos über alle Akten, gruppiert pro Akte. Und in jeder Akte derselbe Streifen: „5 offene To-dos in dieser Akte".</span></li>
         <li><span class="tick">✓</span><span data-i18n-html="mem.li2"><strong>„Offen aus früheren Terminen"</strong> — der nächste Termin mit demselben Kunden startet mit den offenen Punkten.</span></li>
         <li><span class="tick">✓</span><span data-i18n-html="mem.li3"><strong>Frag deine Bibliothek</strong> — „Was haben wir mit Enercept zum Budget vereinbart?" Antwort mit Quellen, über alle Meetings.</span></li>
         <li><span class="tick">✓</span><span data-i18n-html="mem.li4"><strong>Personen-Dossiers</strong> — alle Termine, Zusagen und Zitate einer Person auf einen Blick.</span></li>
@@ -633,6 +650,11 @@ const i18n = {
     "use.3.p": "Client case files with all correspondence, meetings and files. NDA meetings fully local without cloud — one switch, per meeting.",
     "use.4.h": "Leadership",
     "use.4.p": "\"What did we agree with Enercept on budget?\" — one question to your library, answered with sources. Plus the Friday digest: all open commitments of the week, automatically.",
+    "phase.h2": "The case file becomes a plan.",
+    "phase.lead": "Define phases like specification, build, acceptance — and the case file turns into a timeline: every document hangs on its phase, every deliverable has a status.",
+    "phase.li1": "<strong>Timeline instead of gut feeling</strong> — phases as bars with date ranges, today-line included. One glance shows where the project stands.",
+    "phase.li2": "<strong>✦ AI assigns</strong> — one click and the AI attaches unassigned documents to the right phase. Multiple documents per phase, naturally.",
+    "phase.li3": "<strong>Status per document</strong> — open, in progress, approved. \"The client signed off on this version\" is now a chip, not a search mission.",
     "exp.h2": "The difference: expectations.",
     "exp.lead": "Every notetaker summarizes what happened. FlowScribe monitors what should happen — in three categories you define in one sentence before the meeting.",
     "exp.li1": "<strong>\"I wish that …\"</strong> — a gentle nudge if it's still open near the end.",
@@ -640,7 +662,7 @@ const i18n = {
     "exp.li3": "<strong>\"I want to avoid that …\"</strong> — live warning the moment the pattern appears.",
     "mem.h2": "A memory for commitments.",
     "mem.lead": "Promises no longer vanish into old minutes. FlowScribe tracks them across all meetings — and brings them back when it counts.",
-    "mem.li1": "<strong>Commitment tracker</strong> — who owes whom what, with overdue detection (\"by Friday\", \"week 38\").",
+    "mem.li1": "<strong>One overarching view</strong> — all open to-dos across all case files, grouped per case file. And inside each case file the same strip: \"5 open to-dos in this file\".",
     "mem.li2": "<strong>\"Open from previous meetings\"</strong> — the next meeting with the same client starts with the open items.",
     "mem.li3": "<strong>Ask your library</strong> — \"What did we agree with Enercept on budget?\" Answers with sources, across all meetings.",
     "mem.li4": "<strong>People dossiers</strong> — all meetings, commitments and quotes of a person at a glance.",
