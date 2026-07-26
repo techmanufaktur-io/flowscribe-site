@@ -306,8 +306,8 @@
 <div class="hero-bg">
 <header class="hero wrap">
   <div class="eyebrow">✦ <span data-i18n="hero.eyebrow">Strukturierte Wissenserfassung — Meetings, Docs, Tabellen, Dateien</span></div>
-  <h1 data-i18n-html="hero.h1">Das Ergebnis ist fertig,<br>wenn das <span class="accent">Meeting endet</span>.</h1>
-  <p class="sub" data-i18n="hero.sub">FlowScribe erfasst dein Arbeitswissen strukturiert — Meetings transkribiert die KI live auf ein Board, Docs, Tabellen und Dateien liegen daneben in derselben Akte. Eine zentrale Wahrheit statt vier Tools, jede Aussage belegt.</p>
+  <h1 data-i18n-html="hero.h1">Sag, was du erwartest.<br>FlowScribe <span class="accent">steuert dich dahin</span>.</h1>
+  <p class="sub" data-i18n="hero.sub">Du definierst das Ziel — FlowScribe hält live dagegen: im Meeting, im Projekt, in der Akte. Dein gesamtes Arbeitswissen strukturiert an einer Stelle, jede Aussage belegt. Das Meeting ist dabei nur der Anfang.</p>
   <div class="cta-row">
     <a class="btn big" href="mailto:hello@techmanufaktur.de?subject=FlowScribe%20Early%20Access" data-i18n="hero.cta1">Early Access anfragen</a>
     <a class="btn big ghost" href="#features" data-i18n="hero.cta2">So funktioniert's</a>
@@ -331,6 +331,25 @@
     <kbd>⌘.</kbd><span data-i18n="keys.stop">Aufnahme beenden</span>
   </div>
 </div>
+
+<section class="warm" id="erwartungen">
+  <div class="wrap split">
+    <div>
+      <h2 data-i18n="exp.h2">Das Prinzip: Erwartung rein, Steuerung raus.</h2>
+      <p class="lead" data-i18n="exp.lead">Andere Tools protokollieren, was war. FlowScribe steuert auf das zu, was sein soll: Im Meeting wachen deine Erwartungen live mit, in der Akte wird das Ziel zum Phasenplan, im Zusagen-Register bleibt nichts liegen. Ein Satz vorab genügt.</p>
+      <ul class="checklist">
+        <li><span class="tick">✓</span><span data-i18n-html="exp.li1"><strong>„Ich wünsche mir, dass …"</strong> — sanfter Hinweis, wenn es gegen Ende noch offen ist.</span></li>
+        <li><span class="tick">✓</span><span data-i18n-html="exp.li2"><strong>„Ich erwarte, dass …"</strong> — landet als erfüllt/verfehlt im Abschluss-Report.</span></li>
+        <li><span class="tick">✓</span><span data-i18n-html="exp.li3"><strong>„Ich möchte vermeiden, dass …"</strong> — Live-Warnung, sobald das Muster erkannt wird.</span></li>
+      </ul>
+    </div>
+    <div class="exp-mock" aria-hidden="true">
+      <div class="exp-mock-row"><span class="dot green"></span><div><div class="t">…wir mit konkreten nächsten Schritten rausgehen</div><div class="s">✓ abgehakt — 3 To-dos mit Owner &amp; Frist auf dem Board</div></div></div>
+      <div class="exp-mock-row"><span class="dot amber"></span><div><div class="t">…der Kunde ein konkretes Startdatum nennt</div><div class="s">angeschnitten — „KW 38" um 22:14, noch unbestätigt</div></div></div>
+      <div class="exp-mock-row"><span class="dot red"></span><div><div class="t">…wir uns in Technikdetails verlieren</div><div class="s">⚠ verletzt — Diskussion driftet seit 4 min (VPN, Zertifikate)</div></div></div>
+    </div>
+  </div>
+</section>
 
 <section id="features">
   <div class="wrap">
@@ -402,24 +421,6 @@
   </div>
 </section>
 
-<section class="warm" id="erwartungen">
-  <div class="wrap split">
-    <div>
-      <h2 data-i18n="exp.h2">Der Unterschied: Erwartungen.</h2>
-      <p class="lead" data-i18n="exp.lead">Jeder Notetaker fasst zusammen, was war. FlowScribe überwacht, was sein sollte — in drei Kategorien, die du vor dem Termin in einem Satz definierst.</p>
-      <ul class="checklist">
-        <li><span class="tick">✓</span><span data-i18n-html="exp.li1"><strong>„Ich wünsche mir, dass …"</strong> — sanfter Hinweis, wenn es gegen Ende noch offen ist.</span></li>
-        <li><span class="tick">✓</span><span data-i18n-html="exp.li2"><strong>„Ich erwarte, dass …"</strong> — landet als erfüllt/verfehlt im Abschluss-Report.</span></li>
-        <li><span class="tick">✓</span><span data-i18n-html="exp.li3"><strong>„Ich möchte vermeiden, dass …"</strong> — Live-Warnung, sobald das Muster erkannt wird.</span></li>
-      </ul>
-    </div>
-    <div class="exp-mock" aria-hidden="true">
-      <div class="exp-mock-row"><span class="dot green"></span><div><div class="t">…wir mit konkreten nächsten Schritten rausgehen</div><div class="s">✓ abgehakt — 3 To-dos mit Owner &amp; Frist auf dem Board</div></div></div>
-      <div class="exp-mock-row"><span class="dot amber"></span><div><div class="t">…der Kunde ein konkretes Startdatum nennt</div><div class="s">angeschnitten — „KW 38" um 22:14, noch unbestätigt</div></div></div>
-      <div class="exp-mock-row"><span class="dot red"></span><div><div class="t">…wir uns in Technikdetails verlieren</div><div class="s">⚠ verletzt — Diskussion driftet seit 4 min (VPN, Zertifikate)</div></div></div>
-    </div>
-  </div>
-</section>
 
 <section>
   <div class="wrap split flip">
@@ -605,8 +606,8 @@ const i18n = {
     "road.3.i3": "🧩 Integrations: Slack, CRM & calendar suites",
     "road.3.i4": "📊 Meeting analytics pro",
     "hero.eyebrow": "Structured knowledge capture — meetings, docs, sheets, files",
-    "hero.h1": "The result is done<br>when the <span class=\"accent\">meeting ends</span>.",
-    "hero.sub": "FlowScribe captures your working knowledge in structure — the AI transcribes meetings live onto a board, while docs, sheets and files sit next to them in the same case file. One central truth instead of four tools, every statement evidenced.",
+    "hero.h1": "Say what you expect.<br>FlowScribe <span class=\"accent\">steers you there</span>.",
+    "hero.sub": "You define the goal — FlowScribe holds you to it, live: in the meeting, in the project, in the case file. All your working knowledge structured in one place, every statement evidenced. The meeting is just the beginning.",
     "hero.cta1": "Request early access",
     "hero.cta2": "See how it works",
     "hero.fine": "macOS 15+ · Apple Silicon · On-device transcription · No account, no forced cloud",
@@ -657,8 +658,8 @@ const i18n = {
     "phase.li1": "<strong>Timeline instead of gut feeling</strong> — phases as bars with date ranges, today-line included. One glance shows where the project stands.",
     "phase.li2": "<strong>✦ AI assigns</strong> — one click and the AI attaches unassigned documents to the right phase. Multiple documents per phase, naturally.",
     "phase.li3": "<strong>Status per document</strong> — open, in progress, approved. \"The client signed off on this version\" is now a chip, not a search mission.",
-    "exp.h2": "The difference: expectations.",
-    "exp.lead": "Every notetaker summarizes what happened. FlowScribe monitors what should happen — in three categories you define in one sentence before the meeting.",
+    "exp.h2": "The principle: expectation in, steering out.",
+    "exp.lead": "Other tools record what happened. FlowScribe steers toward what should happen: your expectations watch the meeting live, the goal becomes a phase plan in the case file, and nothing slips in the commitments register. One sentence upfront is enough.",
     "exp.li1": "<strong>\"I wish that …\"</strong> — a gentle nudge if it's still open near the end.",
     "exp.li2": "<strong>\"I expect that …\"</strong> — lands as met/missed in the wrap-up report.",
     "exp.li3": "<strong>\"I want to avoid that …\"</strong> — live warning the moment the pattern appears.",
